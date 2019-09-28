@@ -18,48 +18,41 @@ import javax.swing.table.DefaultTableModel;
 /*
  *   @author Cyan Froste
  */
-public class MainPOSuserLevel extends javax.swing.JFrame {
+public class MainPOScounterLevel extends javax.swing.JFrame {
 
     // Creates new form MainPOS
      
-    public MainPOSuserLevel() {
+    public MainPOScounterLevel() {
         initComponents();
     }    
     String lname;
-    public MainPOSuserLevel(String name) {
+    public MainPOScounterLevel(String name) {
         initComponents();
         this.lname = name;
         user.setText(lname);        
         CategoryTableUpdate();
-        Category();
         CatalogTableUpdate();
         // UserUpdate();
         TableStyleCenter(tableCategory, "Open Sans", 12);
         TableStyleCenter(tableSales, "Open Sans", 12);
         TableStyleCenter(tableCatalog, "Open Sans", 12);
 
-        TextFieldStyler(txtProduct);
-        TextFieldStyler(txtCode);
-        TextFieldStyler(txtMRP);
-        TextFieldStyler(txtCP);
+       
         TextFieldStyler(txtLineTotal);
         TextFieldStyler(txtTotal);
         TextFieldStyler(txtPay);
         TextFieldStyler(txtBalance);
         TextFieldStyler(txtDiscount);
-        TextFieldStyler(txtQty);
-        TextFieldStyler(txtTax);
+        
         TextFieldStyler(txtProductSales);
         TextFieldStyler(txtCodeSales);
         TextFieldStyler(txtMRPSales);
-        TextFieldStyler(txtCatName);
+        
         
         JSpinner.NumberEditor edit = (JSpinner.NumberEditor)spinQty.getEditor();
         edit.getTextField().setHorizontalAlignment(JTextField.CENTER);
         
-        ((JLabel)catStatus.getRenderer()).setHorizontalAlignment(JLabel.CENTER);
-        ((JLabel)logCategory.getRenderer()).setHorizontalAlignment(JLabel.CENTER);
-        ((JLabel)logStatus.getRenderer()).setHorizontalAlignment(JLabel.CENTER);
+       
         
     }
     
@@ -123,43 +116,13 @@ public class MainPOSuserLevel extends javax.swing.JFrame {
         jLabel20 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         labelCatalog = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tableCatalog = new javax.swing.JTable();
-        txtProduct = new javax.swing.JTextField();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        txtDescription = new javax.swing.JTextArea();
-        logCategory = new javax.swing.JComboBox();
-        logStatus = new javax.swing.JComboBox<>();
-        txtQty = new javax.swing.JTextField();
-        txtMRP = new javax.swing.JTextField();
-        txtCP = new javax.swing.JTextField();
-        txtCode = new javax.swing.JTextField();
-        jLabel10 = new javax.swing.JLabel();
-        txtTax = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        addButtonCatalog = new javax.swing.JButton();
-        editButtonCatalog = new javax.swing.JButton();
-        deleteButtonCatalog = new javax.swing.JButton();
         exitCatalog = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         labelCategoryList = new javax.swing.JLabel();
-        labelCategoryName = new javax.swing.JLabel();
-        txtCatName = new javax.swing.JTextField();
-        labelCategoryStatus = new javax.swing.JLabel();
-        catStatus = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         tableCategory = new javax.swing.JTable();
-        deleteButtonCat = new javax.swing.JButton();
-        addButtonCat = new javax.swing.JButton();
-        editButtonCat = new javax.swing.JButton();
         exitCategory = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -498,27 +461,6 @@ public class MainPOSuserLevel extends javax.swing.JFrame {
         labelCatalog.setFont(new java.awt.Font("Open Sans Extrabold", 0, 24)); // NOI18N
         labelCatalog.setText("CATALOG");
 
-        jLabel1.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
-        jLabel1.setText("Product :");
-
-        jLabel3.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
-        jLabel3.setText("Description :");
-
-        jLabel4.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
-        jLabel4.setText("Category :");
-
-        jLabel5.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
-        jLabel5.setText("MRP :");
-
-        jLabel6.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
-        jLabel6.setText("Cost Price :");
-
-        jLabel7.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
-        jLabel7.setText("Quantity :");
-
-        jLabel9.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
-        jLabel9.setText("Status :");
-
         tableCatalog.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
         tableCatalog.setForeground(new java.awt.Color(51, 51, 51));
         tableCatalog.setModel(new javax.swing.table.DefaultTableModel(
@@ -551,84 +493,6 @@ public class MainPOSuserLevel extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(tableCatalog);
 
-        txtProduct.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
-        txtProduct.setForeground(new java.awt.Color(51, 51, 51));
-        txtProduct.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtProductActionPerformed(evt);
-            }
-        });
-
-        txtDescription.setColumns(20);
-        txtDescription.setForeground(new java.awt.Color(51, 51, 51));
-        txtDescription.setRows(5);
-        jScrollPane3.setViewportView(txtDescription);
-
-        logCategory.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
-        logCategory.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                logCategoryActionPerformed(evt);
-            }
-        });
-
-        logStatus.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
-        logStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Active", "Offline" }));
-        logStatus.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                logStatusActionPerformed(evt);
-            }
-        });
-
-        txtQty.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
-        txtQty.setForeground(new java.awt.Color(51, 51, 51));
-        txtQty.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtQtyActionPerformed(evt);
-            }
-        });
-
-        txtMRP.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
-        txtMRP.setForeground(new java.awt.Color(51, 51, 51));
-
-        txtCP.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
-        txtCP.setForeground(new java.awt.Color(51, 51, 51));
-
-        txtCode.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
-        txtCode.setForeground(new java.awt.Color(51, 51, 51));
-
-        jLabel10.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
-        jLabel10.setText("Code :");
-
-        txtTax.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
-        txtTax.setForeground(new java.awt.Color(51, 51, 51));
-
-        jLabel2.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
-        jLabel2.setText("Tax :");
-
-        addButtonCatalog.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
-        addButtonCatalog.setText("ADD");
-        addButtonCatalog.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addButtonCatalogActionPerformed(evt);
-            }
-        });
-
-        editButtonCatalog.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
-        editButtonCatalog.setText("EDIT");
-        editButtonCatalog.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                editButtonCatalogActionPerformed(evt);
-            }
-        });
-
-        deleteButtonCatalog.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
-        deleteButtonCatalog.setText("DELETE");
-        deleteButtonCatalog.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                deleteButtonCatalogActionPerformed(evt);
-            }
-        });
-
         exitCatalog.setFont(new java.awt.Font("Open Sans", 2, 14)); // NOI18N
         exitCatalog.setForeground(new java.awt.Color(255, 51, 0));
         exitCatalog.setText("exit");
@@ -639,72 +503,19 @@ public class MainPOSuserLevel extends javax.swing.JFrame {
             }
         });
 
-        jLabel21.setFont(new java.awt.Font("Open Sans Semibold", 1, 24)); // NOI18N
-        jLabel21.setText("%");
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(120, 120, 120)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(87, 87, 87)
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel4)
-                                            .addComponent(jLabel2)))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                                .addComponent(jLabel1)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(txtProduct, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(jLabel7)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(txtQty, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addComponent(labelCatalog))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel5)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(txtMRP)
-                                            .addComponent(logCategory, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                                .addComponent(txtTax, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jLabel21)))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel6)
-                                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel10))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(txtCP)
-                                            .addComponent(logStatus, 0, 124, Short.MAX_VALUE)
-                                            .addComponent(txtCode, javax.swing.GroupLayout.Alignment.TRAILING))
-                                        .addGap(118, 118, 118)
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(addButtonCatalog, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(deleteButtonCatalog, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE)
-                                            .addComponent(editButtonCatalog, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addGap(0, 0, Short.MAX_VALUE)
-                                        .addComponent(exitCatalog))))
-                            .addComponent(jScrollPane2))
-                        .addGap(120, 120, 120))))
+                        .addComponent(labelCatalog)
+                        .addGap(942, 942, 942)
+                        .addComponent(exitCatalog))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1080, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -713,44 +524,9 @@ public class MainPOSuserLevel extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelCatalog)
                     .addComponent(exitCatalog))
-                .addGap(50, 50, 50)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtProduct, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel5)
-                    .addComponent(txtMRP, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtQty, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6)
-                    .addComponent(txtCP, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(addButtonCatalog, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4)
-                            .addComponent(logCategory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel9)
-                            .addComponent(logStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(editButtonCatalog, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(42, 42, 42)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(txtCode, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel10)
-                                    .addComponent(txtTax, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel2)
-                                    .addComponent(deleteButtonCatalog, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addGap(44, 44, 44)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(74, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Catalog", jPanel2);
@@ -760,28 +536,6 @@ public class MainPOSuserLevel extends javax.swing.JFrame {
 
         labelCategoryList.setFont(new java.awt.Font("Open Sans Extrabold", 0, 24)); // NOI18N
         labelCategoryList.setText("CATEGORY");
-
-        labelCategoryName.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
-        labelCategoryName.setText("Category Name :");
-
-        txtCatName.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
-        txtCatName.setForeground(new java.awt.Color(51, 51, 51));
-        txtCatName.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCatNameActionPerformed(evt);
-            }
-        });
-        txtCatName.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtCatNameKeyPressed(evt);
-            }
-        });
-
-        labelCategoryStatus.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
-        labelCategoryStatus.setText("Status :");
-
-        catStatus.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
-        catStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Active", "Offline" }));
 
         jScrollPane1.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
 
@@ -818,30 +572,6 @@ public class MainPOSuserLevel extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tableCategory);
         tableCategory.getAccessibleContext().setAccessibleDescription("");
 
-        deleteButtonCat.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
-        deleteButtonCat.setText("DELETE");
-        deleteButtonCat.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                deleteButtonCatActionPerformed(evt);
-            }
-        });
-
-        addButtonCat.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
-        addButtonCat.setText("ADD");
-        addButtonCat.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addButtonCatActionPerformed(evt);
-            }
-        });
-
-        editButtonCat.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
-        editButtonCat.setText("EDIT");
-        editButtonCat.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                editButtonCatActionPerformed(evt);
-            }
-        });
-
         exitCategory.setFont(new java.awt.Font("Open Sans", 2, 14)); // NOI18N
         exitCategory.setForeground(new java.awt.Color(255, 51, 0));
         exitCategory.setText("exit");
@@ -859,54 +589,23 @@ public class MainPOSuserLevel extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(120, 120, 120)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1080, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(labelCategoryList)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(exitCategory))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(addButtonCat, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(62, 62, 62)
-                                .addComponent(editButtonCat, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
-                                .addComponent(deleteButtonCat, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(labelCategoryName)
-                                    .addComponent(labelCategoryStatus))
-                                .addGap(52, 52, 52)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtCatName)
-                                    .addComponent(catStatus, 0, 186, Short.MAX_VALUE))))
-                        .addGap(92, 92, 92)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(86, Short.MAX_VALUE))
+                        .addComponent(exitCategory)))
+                .addContainerGap(105, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addGap(50, 50, 50)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelCategoryList)
                     .addComponent(exitCategory))
-                .addGap(77, 77, 77)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(labelCategoryName)
-                            .addComponent(txtCatName, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(77, 77, 77)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(labelCategoryStatus)
-                            .addComponent(catStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(deleteButtonCat, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(addButtonCat, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(editButtonCat, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 349, Short.MAX_VALUE))
-                .addGap(132, 132, 132))
+                .addGap(44, 44, 44)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(74, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Category", jPanel3);
@@ -925,338 +624,18 @@ public class MainPOSuserLevel extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void editButtonCatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editButtonCatActionPerformed
-        // TODO add your handling code here:
-        DefaultTableModel model = (DefaultTableModel)tableCategory.getModel();
-        int SelectIndex = tableCategory.getSelectedRow();
-        int CID = Integer.parseInt(model.getValueAt(SelectIndex, 0).toString());
-        String CName = txtCatName.getText();
-        String Status = catStatus.getSelectedItem().toString();
-        try{
-            con = DriverManager.getConnection(URL,USER,PASS);
-            String sql = "UPDATE category SET catname=?, status=? WHERE CID=?";
-            pstmt = con.prepareStatement(sql);
-            pstmt.setString(1, CName);
-            pstmt.setString(2, Status);
-            pstmt.setInt(3, CID);
-            pstmt.executeUpdate();
-            JOptionPane.showMessageDialog(this, "Entry Updated");
-            CategoryTableUpdate();
-            CatalogTableUpdate();
-            txtCatName.setText("");
-            catStatus.setSelectedIndex(-1);
-            txtCatName.requestFocus();
-            Category();
-        }catch(SQLException e){
-            JOptionPane.showMessageDialog(this, e, "SQL Error", JOptionPane.ERROR_MESSAGE);
-        }finally {
-            try {
-                if (con != null) {
-                    con.close();
-                }
-                if (pstmt != null) {
-                    pstmt.close();
-                }if (rs != null) {
-                    rs.close();
-                }                
-            } catch (SQLException e) {
-                JOptionPane.showMessageDialog(this, e, "SQL Error", JOptionPane.ERROR_MESSAGE);
-            }
-        }    
-    }//GEN-LAST:event_editButtonCatActionPerformed
     
     private void TextFieldStyler(JTextField textField){
         textField.setHorizontalAlignment(JTextField.CENTER);
     }
-    
-    private void addButtonCatActionPerformed(){
-        String Name = txtCatName.getText();
-        String Status = catStatus.getSelectedItem().toString();
-        try{
-            con = DriverManager.getConnection(URL,USER,PASS);
-            String sql = "INSERT INTO category(catname,  status) VALUES (?,?)";
-            pstmt = con.prepareStatement(sql);            
-            pstmt.setString(1, Name);
-            pstmt.setString(2, Status);
-            pstmt.executeUpdate();
-            JOptionPane.showMessageDialog(this, "Entry Added");
-            CategoryTableUpdate();
-            CatalogTableUpdate();
-            txtCatName.setText("");
-            catStatus.setSelectedIndex(-1);
-            Category();
-            txtCatName.requestFocus();
-        }catch(SQLException e){
-            JOptionPane.showMessageDialog(this, e, "SQL Error", JOptionPane.ERROR_MESSAGE);
-        }finally {
-            try {
-                if (con != null) {
-                    con.close();
-                }
-                if (pstmt != null) {
-                    pstmt.close();
-                }if (rs != null) {
-                    rs.close();
-                }
-            } catch (SQLException e) {
-                JOptionPane.showMessageDialog(this, e, "SQL Error", JOptionPane.ERROR_MESSAGE);
-            }
-        }    
-    }
-    
-    private void addButtonCatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonCatActionPerformed
-        // TODO add your handling code here:
-        addButtonCatActionPerformed();
-    }//GEN-LAST:event_addButtonCatActionPerformed
-    
-    private void deleteButtonCatActionPerformed(){
-       DefaultTableModel model = (DefaultTableModel)tableCategory.getModel();
-        int SelectIndex = tableCategory.getSelectedRow();
-        int CID = Integer.parseInt(model.getValueAt(SelectIndex, 0).toString());
-        int Choice = JOptionPane.showConfirmDialog(this, "Delete?","Warning", JOptionPane.YES_NO_OPTION);
-        if(Choice == JOptionPane.YES_OPTION){
-            try{
-                con = DriverManager.getConnection(URL,USER,PASS);
-                String sql = "DELETE FROM category WHERE CID=?";
-                pstmt = con.prepareStatement(sql);
-                pstmt.setInt(1, CID);
-                pstmt.executeUpdate();
-                sql = "DELETE FROM catalogtable WHERE PCID = ?";
-                pstmt = con.prepareStatement(sql);
-                pstmt.setInt(1, CID);
-                pstmt.executeUpdate();
-                JOptionPane.showMessageDialog(this, "Entry Deleted");
-                CategoryTableUpdate();
-                CatalogTableUpdate();
-                txtCatName.setText("");
-                catStatus.setSelectedIndex(-1);
-                Category();
-                txtCatName.requestFocus();
-            }catch(SQLException e){
-                JOptionPane.showMessageDialog(this, e, "SQL Error", JOptionPane.ERROR_MESSAGE);
-            }finally {
-                try {
-                    if (con != null) {
-                        con.close();
-                    }
-                    if (pstmt != null) {
-                        pstmt.close();
-                    }if (rs != null) {
-                    rs.close();
-                    }
-                } catch (SQLException e) {
-                    JOptionPane.showMessageDialog(this, e, "SQL Error", JOptionPane.ERROR_MESSAGE);
-                }
-            }    
-        } 
-    }
-    
-    private void deleteButtonCatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonCatActionPerformed
-        // TODO add your handling code here:
-        deleteButtonCatActionPerformed();
-    }//GEN-LAST:event_deleteButtonCatActionPerformed
+
 
     private void tableCategoryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableCategoryMouseClicked
-        // TODO add your handling code here:
-        DefaultTableModel model = (DefaultTableModel)tableCategory.getModel();
-        int SelectIndex = tableCategory.getSelectedRow();
-        txtCatName.setText(model.getValueAt(SelectIndex, 1).toString());
-        catStatus.setSelectedItem(model.getValueAt(SelectIndex, 2).toString());
+     
     }//GEN-LAST:event_tableCategoryMouseClicked
     
-    private void deleteButtonCatalogActionPerformed(){
-        DefaultTableModel model = (DefaultTableModel)tableCatalog.getModel();
-        int SelectIndex = tableCatalog.getSelectedRow();        
-        int PID = Integer.parseInt(model.getValueAt(SelectIndex, 0).toString());        
-        int Choice = JOptionPane.showConfirmDialog(this, "Delete?","Warning", JOptionPane.YES_NO_OPTION);        
-        if(Choice == JOptionPane.YES_OPTION){
-            try{
-                con = DriverManager.getConnection(URL,USER,PASS);
-                String sql = "DELETE FROM catalogtable WHERE PID=?";
-                pstmt = con.prepareStatement(sql);
-                pstmt.setInt(1, PID);
-                pstmt.executeUpdate();
-                JOptionPane.showMessageDialog(this, "Product Deleted");
-                ClearCatalog();                
-            }catch(SQLException e){
-                JOptionPane.showMessageDialog(this, e, "SQL Error", JOptionPane.ERROR_MESSAGE);
-            }finally {
-                try {
-                    if (con != null) {
-                        con.close();
-                    }
-                    if (pstmt != null) {
-                        pstmt.close();
-                    }if (rs != null) {
-                    rs.close();
-                    }
-                } catch (SQLException e) {
-                    JOptionPane.showMessageDialog(this, e, "SQL Error", JOptionPane.ERROR_MESSAGE);
-                }
-            }    
-        }
-    }
-    
-    private void deleteButtonCatalogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonCatalogActionPerformed
-        // TODO add your handling code here:
-        deleteButtonCatalogActionPerformed();
-    }//GEN-LAST:event_deleteButtonCatalogActionPerformed
-
-    private void editButtonCatalogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editButtonCatalogActionPerformed
-        // TODO add your handling code here:
-        DefaultTableModel model = (DefaultTableModel)tableCatalog.getModel();
-        int SelectIndex = tableCatalog.getSelectedRow();
-        int PID = Integer.parseInt(model.getValueAt(SelectIndex, 0).toString());        
-        String Name = txtProduct.getText();
-        String Description = txtDescription.getText();        
-        CategoryItem item = (CategoryItem)logCategory.getSelectedItem();        
-        String MRP = txtMRP.getText();
-        String Tax = txtTax.getText();
-        String CPrice = txtCP.getText();
-        String Qty = txtQty.getText();
-        String PCode = txtCode.getText();
-        String Status = logStatus.getSelectedItem().toString();        
-        try{
-            con = DriverManager.getConnection(URL,USER,PASS);
-            String sql = "UPDATE catalogtable SET prodname=?, description=?, PCID=?, MRP=?, tax=?, costprice=?, qty=?, prodstatus=?, prodcode=? WHERE PID=?";
-            pstmt = con.prepareStatement(sql);            
-            pstmt.setString(1, Name);
-            pstmt.setString(2, Description);
-            pstmt.setInt(3, item.id);
-            pstmt.setString(4, MRP);
-            pstmt.setString(5, Tax);
-            pstmt.setString(6, CPrice);
-            pstmt.setString(7, Qty);
-            pstmt.setString(8, Status);
-            pstmt.setString(9, PCode);
-            pstmt.setInt(10, PID);            
-            pstmt.executeUpdate();
-            JOptionPane.showMessageDialog(this, "Product Updated");
-            ClearCatalog();            
-        }catch(SQLException e){
-            JOptionPane.showMessageDialog(this, e, "SQL Error", JOptionPane.ERROR_MESSAGE);
-        }finally {
-            try {
-                if (con != null) {
-                    con.close();
-                }
-                if (pstmt != null) {
-                    pstmt.close();
-                }if (rs != null) {
-                    rs.close();
-                }
-            } catch (SQLException e) {
-                JOptionPane.showMessageDialog(this, e, "SQL Error", JOptionPane.ERROR_MESSAGE);
-            }
-        }    
-    }//GEN-LAST:event_editButtonCatalogActionPerformed
-
-    private void addButtonCatalogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonCatalogActionPerformed
-        // TODO add your handling code here:
-        String Name = txtProduct.getText();
-        String Description = txtDescription.getText();
-        CategoryItem item = (CategoryItem)logCategory.getSelectedItem();
-        String MRP = txtMRP.getText();
-        String CPrice = txtCP.getText();
-        String Qty = txtQty.getText();
-        String PCode = txtCode.getText();
-        String Status = logStatus.getSelectedItem().toString();
-        String Tax = txtTax.getText();
-        try{
-            con = DriverManager.getConnection(URL,USER,PASS);
-            String sql = "INSERT INTO catalogtable(prodname, description, PCID, MRP, costprice, qty, prodstatus, prodcode, tax) VALUES (?,?,?,?,?,?,?,?,?)";
-            pstmt = con.prepareStatement(sql);            
-            pstmt.setString(1, Name);
-            pstmt.setString(2, Description);
-            pstmt.setInt(3, item.id);
-            pstmt.setString(4, MRP);
-            pstmt.setString(5, CPrice);
-            pstmt.setString(6, Qty);
-            pstmt.setString(7, Status);
-            pstmt.setString(8, PCode);
-            pstmt.setString(9, Tax);
-            
-            pstmt.executeUpdate();            
-            JOptionPane.showMessageDialog(this, "Product Added");
-            ClearCatalog();            
-        }catch(SQLException e){
-            JOptionPane.showMessageDialog(this, e, "SQL Error", JOptionPane.ERROR_MESSAGE);
-        }finally {
-            try {
-                if (con != null) {
-                    con.close();
-                }
-                if (pstmt != null) {
-                    pstmt.close();
-                }if (rs != null) {
-                    rs.close();
-                }
-            } catch (SQLException e) {
-                JOptionPane.showMessageDialog(this, e, "SQL Error", JOptionPane.ERROR_MESSAGE);
-            }
-        }    
-    }//GEN-LAST:event_addButtonCatalogActionPerformed
-
-    private void txtQtyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtQtyActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtQtyActionPerformed
-
-    private void logStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logStatusActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_logStatusActionPerformed
-
-    private void logCategoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logCategoryActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_logCategoryActionPerformed
-
-    private void txtProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtProductActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtProductActionPerformed
-
     private void tableCatalogMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableCatalogMouseClicked
-        // TODO add your handling code here:
-        DefaultTableModel model = (DefaultTableModel)tableCatalog.getModel();
-        int SelectIndex = tableCatalog.getSelectedRow();        
-        txtProduct.setText(model.getValueAt(SelectIndex, 1).toString());
-        txtDescription.setText(model.getValueAt(SelectIndex, 2).toString());        
-        String SelCat = model.getValueAt(SelectIndex, 3).toString();                
-        int ID = 0;               
-        try{            
-            con = DriverManager.getConnection(URL,USER,PASS);
-            String sql = "SELECT * FROM category";
-            pstmt = con.prepareStatement(sql);
-            rs = pstmt.executeQuery();            
-            while(rs.next()){
-                if(SelCat.equals(rs.getString(2))){
-                     SelCat = rs.getString(2);
-                     ID = rs.getInt(1);
-                }
-            }
-            logCategory.getModel().setSelectedItem(new CategoryItem(ID, SelCat));           
-        }catch(SQLException e){
-            JOptionPane.showMessageDialog(this, e, "SQL Error", JOptionPane.ERROR_MESSAGE);
-        }finally {
-            try {
-                if (con != null) {
-                    con.close();
-                }
-                if (pstmt != null) {
-                    pstmt.close();
-                }
-                if (rs != null) {
-                    rs.close();
-                }
-            } catch (SQLException e) {
-                JOptionPane.showMessageDialog(this, e, "SQL Error", JOptionPane.ERROR_MESSAGE);
-            }
-        }             
-        logStatus.getModel().setSelectedItem(model.getValueAt(SelectIndex, 8).toString());        
-        txtMRP.setText(model.getValueAt(SelectIndex, 4).toString());
-        txtTax.setText(model.getValueAt(SelectIndex, 5).toString());
-        txtCP.setText(model.getValueAt(SelectIndex, 6).toString());
-        txtQty.setText(model.getValueAt(SelectIndex, 7).toString());        
-        txtCode.setText(model.getValueAt(SelectIndex, 9).toString());
+      
     }//GEN-LAST:event_tableCatalogMouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -1341,7 +720,7 @@ public class MainPOSuserLevel extends javax.swing.JFrame {
                 if (pstmt != null) {
                     pstmt.close();
                 }if (rs != null) {
-                    rs.close();
+                        rs.close();
                 }
             } catch (SQLException e) {
                 JOptionPane.showMessageDialog(this, e, "SQL Error", JOptionPane.ERROR_MESSAGE);
@@ -1392,7 +771,7 @@ public class MainPOSuserLevel extends javax.swing.JFrame {
                     if (pstmt != null) {
                         pstmt.close();
                     }if (rs != null) {
-                    rs.close();
+                        rs.close();
                     }
                 } catch (SQLException e) {
                     JOptionPane.showMessageDialog(this, e, "SQL Error", JOptionPane.ERROR_MESSAGE);
@@ -1430,7 +809,7 @@ public class MainPOSuserLevel extends javax.swing.JFrame {
                     if (pstmt != null) {
                         pstmt.close();
                     }if (rs != null) {
-                    rs.close();
+                        rs.close();
                     }
                 } catch (SQLException e) {
                     JOptionPane.showMessageDialog(this, e, "SQL Error", JOptionPane.ERROR_MESSAGE);
@@ -1477,28 +856,11 @@ public class MainPOSuserLevel extends javax.swing.JFrame {
     }//GEN-LAST:event_tableSalesKeyPressed
 
     private void tableCatalogKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tableCatalogKeyPressed
-        // TODO add your handling code here:
-        if(evt.getKeyCode() == KeyEvent.VK_DELETE){
-            deleteButtonCatalogActionPerformed();
-        }
+        
     }//GEN-LAST:event_tableCatalogKeyPressed
 
-    private void txtCatNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCatNameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCatNameActionPerformed
-
-    private void txtCatNameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCatNameKeyPressed
-        // TODO add your handling code here:
-        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
-            addButtonCatActionPerformed();
-        }
-    }//GEN-LAST:event_txtCatNameKeyPressed
-
     private void tableCategoryKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tableCategoryKeyPressed
-        // TODO add your handling code here:
-        if(evt.getKeyCode() == KeyEvent.VK_DELETE){
-            deleteButtonCatActionPerformed();
-        }
+       
     }//GEN-LAST:event_tableCategoryKeyPressed
 
     private void txtDiscountKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDiscountKeyPressed
@@ -1531,38 +893,7 @@ public class MainPOSuserLevel extends javax.swing.JFrame {
         renderer.setHorizontalAlignment(JLabel.CENTER);
     }
     
-    @SuppressWarnings("unchecked")
-    private void Category(){        
-        try{            
-            con = DriverManager.getConnection(URL,USER,PASS);
-            String sql = "SELECT * FROM category";
-            pstmt = con.prepareStatement(sql);
-            rs = pstmt.executeQuery();            
-            logCategory.removeAllItems(); 
-            while(rs.next()){
-                int ID = rs.getInt(1);
-                String name = rs.getString(2);
-                CategoryItem L = new CategoryItem(ID, name);
-                logCategory.addItem(new CategoryItem(ID, name ));
-            }
-        }catch(SQLException e){
-            JOptionPane.showMessageDialog(this, e, "SQL Error", JOptionPane.ERROR_MESSAGE);
-        }finally {
-            try {
-                if (con != null) {
-                    con.close();
-                }
-                if (pstmt != null) {
-                    pstmt.close();
-                }if (rs != null) {
-                    rs.close();
-                }
-            } catch (SQLException e) {
-                JOptionPane.showMessageDialog(this, e, "SQL Error", JOptionPane.ERROR_MESSAGE);
-            }
-        }            
-    }
-    
+   
     private void CategoryTableUpdate(){
         try{
             int ColumnCount;
@@ -1604,7 +935,7 @@ public class MainPOSuserLevel extends javax.swing.JFrame {
                 if (pstmt != null) {
                     pstmt.close();
                 }if (rs != null) {
-                    rs.close();
+                        rs.close();
                 }
             } catch (SQLException e) {
                 JOptionPane.showMessageDialog(this, e, "SQL Error", JOptionPane.ERROR_MESSAGE);
@@ -1647,27 +978,13 @@ public class MainPOSuserLevel extends javax.swing.JFrame {
                 if (pstmt != null) {
                     pstmt.close();
                 }if (rs != null) {
-                    rs.close();
+                        rs.close();
                 }
             } catch (SQLException e) {
                 JOptionPane.showMessageDialog(this, e, "SQL Error", JOptionPane.ERROR_MESSAGE);
             }
         }    
-    }    
-        
-    private void ClearCatalog(){
-        txtProduct.setText("");
-        logStatus.setSelectedIndex(-1);
-        txtDescription.setText("");
-        txtMRP.setText("");
-        txtTax.setText("");
-        txtCP.setText("");
-        txtQty.setText("");
-        txtCode.setText("");
-        logCategory.setSelectedIndex(-1);
-        CatalogTableUpdate();            
-        txtProduct.requestFocus();
-    }
+    } 
         
     private void ClearSales(){
         txtCodeSales.setText("");
@@ -1771,7 +1088,9 @@ public class MainPOSuserLevel extends javax.swing.JFrame {
                 if (pstmt != null) {
                     pstmt.close();
                 }if (rs != null) {
-                    rs.close();
+                        rs.close();
+                }if (rs != null) {
+                        rs.close();
                 }
             } catch (SQLException e) {
                 JOptionPane.showMessageDialog(this, e, "SQL Error", JOptionPane.ERROR_MESSAGE);
@@ -1782,40 +1101,7 @@ public class MainPOSuserLevel extends javax.swing.JFrame {
     public void Print(){
         String Total = txtTotal.getText(), Pay = txtPay.getText(), Balance = txtBalance.getText();        
         new Print(Total, Pay, Balance, tableSales.getModel()).setVisible(true);        
-    }
-    /*
-    private void UserUpdate(){
-        
-        try{
-            int ColumnCount;
-            con = DriverManager.getConnection(URL,USER,PASS);
-            String sql = "SELECT * FROM users";
-            pstmt = con.prepareStatement(sql);
-            rs = pstmt.executeQuery();
-            rsmd = rs.getMetaData();
-            
-            ColumnCount = rsmd.getColumnCount();
-            
-            DefaultTableModel model = (DefaultTableModel)tableUsers.getModel();
-            model.setRowCount(0);
-            
-            while(rs.next()){
-                Vector v = new Vector();
-                for(int i=0; i<ColumnCount; i++){
-                    
-                    v.add(rs.getString("ID"));
-                    v.add(rs.getString("username"));
-                    v.add(rs.getString("status"));
-                }
-                model.addRow(v);
-            }
-            
-        }catch(SQLException e){
-            JOptionPane.showMessageDialog(this, e, "SQL Error", JOptionPane.ERROR_MESSAGE);
-        }
-        
-    }
-    */    
+    }   
     /**@param args the command line arguments
     */
     public static void main(String args[]) {
@@ -1832,8 +1118,10 @@ public class MainPOSuserLevel extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MainPOSuserLevel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainPOScounterLevel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         
@@ -1841,27 +1129,18 @@ public class MainPOSuserLevel extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new MainPOSuserLevel().setVisible(true);
+            new MainPOScounterLevel().setVisible(true);
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel MRPSales;
     private javax.swing.JButton addButton;
-    private javax.swing.JButton addButtonCat;
-    private javax.swing.JButton addButtonCatalog;
-    private javax.swing.JComboBox<String> catStatus;
-    private javax.swing.JButton deleteButtonCat;
-    private javax.swing.JButton deleteButtonCatalog;
-    private javax.swing.JButton editButtonCat;
-    private javax.swing.JButton editButtonCatalog;
     private javax.swing.JLabel exitCatalog;
     private javax.swing.JLabel exitCategory;
     private javax.swing.JLabel exitSales;
     private javax.swing.JButton invoiceButton;
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel14;
@@ -1870,50 +1149,29 @@ public class MainPOSuserLevel extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel labelCatalog;
     private javax.swing.JLabel labelCategoryList;
-    private javax.swing.JLabel labelCategoryName;
-    private javax.swing.JLabel labelCategoryStatus;
-    private javax.swing.JComboBox logCategory;
-    private javax.swing.JComboBox<String> logStatus;
     private javax.swing.JButton removeButton;
     private javax.swing.JSpinner spinQty;
     private javax.swing.JTable tableCatalog;
     private javax.swing.JTable tableCategory;
     private javax.swing.JTable tableSales;
     private javax.swing.JTextField txtBalance;
-    private javax.swing.JTextField txtCP;
-    private javax.swing.JTextField txtCatName;
-    private javax.swing.JTextField txtCode;
     private javax.swing.JTextField txtCodeSales;
-    private javax.swing.JTextArea txtDescription;
     private javax.swing.JTextField txtDiscount;
     private javax.swing.JTextField txtLineTotal;
-    private javax.swing.JTextField txtMRP;
     private javax.swing.JTextField txtMRPSales;
     private javax.swing.JTextField txtPay;
-    private javax.swing.JTextField txtProduct;
     private javax.swing.JTextField txtProductSales;
-    private javax.swing.JTextField txtQty;
-    private javax.swing.JTextField txtTax;
     private javax.swing.JTextField txtTotal;
     private javax.swing.JLabel user;
     // End of variables declaration//GEN-END:variables
