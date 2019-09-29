@@ -1113,6 +1113,8 @@ public class MainPOSuserLevel extends javax.swing.JFrame {
         CategoryItem item = (CategoryItem)logCategory.getSelectedItem();        
         String MRP = txtMRP.getText();
         String Tax = txtTax.getText();
+        if (Tax.equals(""))
+                Tax = "0";
         String CPrice = txtCP.getText();
         String Qty = txtQty.getText();
         String PCode = txtCode.getText();
@@ -1163,6 +1165,8 @@ public class MainPOSuserLevel extends javax.swing.JFrame {
         String PCode = txtCode.getText();
         String Status = logStatus.getSelectedItem().toString();
         String Tax = txtTax.getText();
+        if (Tax.equals(""))
+                Tax = "0";
         try{
             con = DriverManager.getConnection(URL,USER,PASS);
             String sql = "INSERT INTO catalogtable(prodname, description, PCID, MRP, costprice, qty, prodstatus, prodcode, tax) VALUES (?,?,?,?,?,?,?,?,?)";
@@ -1176,6 +1180,7 @@ public class MainPOSuserLevel extends javax.swing.JFrame {
             pstmt.setString(7, Status);
             pstmt.setString(8, PCode);
             pstmt.setString(9, Tax);
+            
             
             pstmt.executeUpdate();            
             JOptionPane.showMessageDialog(this, "Product Added");

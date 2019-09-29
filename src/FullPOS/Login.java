@@ -221,28 +221,36 @@ public class Login extends javax.swing.JFrame {
         String Password = String.valueOf(txtLPassword.getPassword());        
         try{
             con = DriverManager.getConnection(URL,USER,PASS);
-            String sql = "SELECT * FROM users WHERE username=? and password=?";
+            String sql = "SELECT type FROM users WHERE username=? and password=?";
             pstmt = con.prepareStatement(sql);
             pstmt.setString(1, Username);
             pstmt.setString(2, Password);
             rs = pstmt.executeQuery();
             if(rs.next()){
                 // if admin
-                if(rs.getString("username").equals("admin") && rs.getString("password").equals("complexpassword") ){
-                    MainPOS session = new MainPOS();                    
-                    new MainPOS(txtLUsername.getText()).setVisible(true);
-                    this.dispose();
+                switch (rs.getString("type")) {
+                    case "admin":
+                        {
+                            MainPOS session = new MainPOS();
+                            new MainPOS(txtLUsername.getText()).setVisible(true);
+                            this.dispose();
+                            break;
+                        }
+                    case "manager":
+                        {
+                            MainPOSuserLevel session = new MainPOSuserLevel();
+                            new MainPOSuserLevel(txtLUsername.getText()).setVisible(true);
+                            this.dispose();
+                            break;
+                        }
+                    default:
+                        {
+                            MainPOScounterLevel session = new MainPOScounterLevel();
+                            this.dispose();
+                            new MainPOScounterLevel(txtLUsername.getText()).setVisible(true);
+                            break;
+                        }
                 }
-                else if(rs.getString("username").equals("filler") && rs.getString("password").equals("ifillshit") ){
-                    MainPOSuserLevel session = new MainPOSuserLevel();                    
-                    new MainPOSuserLevel(txtLUsername.getText()).setVisible(true);
-                    this.dispose();
-                }
-                else{
-                    MainPOScounterLevel session = new MainPOScounterLevel();
-                    this.dispose();
-                    new MainPOScounterLevel(txtLUsername.getText()).setVisible(true);
-                }            
             }
             else{
                 JOptionPane.showMessageDialog(this, "Invalid Credentials");

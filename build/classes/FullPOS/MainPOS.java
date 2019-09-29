@@ -73,6 +73,7 @@ public class MainPOS extends javax.swing.JFrame {
         ((JLabel)logCategory.getRenderer()).setHorizontalAlignment(JLabel.CENTER);
         ((JLabel)logStatus.getRenderer()).setHorizontalAlignment(JLabel.CENTER);
         ((JLabel)userStatus.getRenderer()).setHorizontalAlignment(JLabel.CENTER);
+        ((JLabel)userType.getRenderer()).setHorizontalAlignment(JLabel.CENTER);
         
         
     }
@@ -193,6 +194,8 @@ public class MainPOS extends javax.swing.JFrame {
         editButtonUser = new javax.swing.JButton();
         deleteButtonUser = new javax.swing.JButton();
         exitUser = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        userType = new javax.swing.JComboBox<>();
         jPanel5 = new javax.swing.JPanel();
         printSR = new javax.swing.JButton();
         printIndPS = new javax.swing.JButton();
@@ -541,7 +544,7 @@ public class MainPOS extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel15)
                         .addComponent(jLabel19)))
-                .addContainerGap(84, Short.MAX_VALUE))
+                .addContainerGap(92, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Sell", jPanel1);
@@ -809,7 +812,7 @@ public class MainPOS extends javax.swing.JFrame {
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Catalog", jPanel2);
@@ -950,7 +953,7 @@ public class MainPOS extends javax.swing.JFrame {
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(labelCategoryStatus)
                             .addComponent(catStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 169, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 177, Short.MAX_VALUE)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(deleteButtonCat, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(addButtonCat, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -991,11 +994,11 @@ public class MainPOS extends javax.swing.JFrame {
 
             },
             new String [] {
-                "ID", "Username", "Status"
+                "ID", "Username", "Status", "Type"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -1061,6 +1064,12 @@ public class MainPOS extends javax.swing.JFrame {
             }
         });
 
+        jLabel26.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
+        jLabel26.setText("Type :");
+
+        userType.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
+        userType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "admin", "manager", "user" }));
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -1073,25 +1082,31 @@ public class MainPOS extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(exitUser))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel23))
-                            .addComponent(addButtonUser, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGap(75, 75, 75)
-                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(userStatus, 0, 224, Short.MAX_VALUE)
-                                    .addComponent(txtUsername)
-                                    .addComponent(txtPassword)))
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(jLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(addButtonUser, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(jPanel4Layout.createSequentialGroup()
+                                        .addGap(50, 50, 50)
+                                        .addComponent(editButtonUser, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                                        .addComponent(deleteButtonUser, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel4Layout.createSequentialGroup()
+                                        .addGap(75, 75, 75)
+                                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(txtUsername, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
+                                            .addComponent(txtPassword)))))
                             .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGap(50, 50, 50)
-                                .addComponent(editButtonUser, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
-                                .addComponent(deleteButtonUser, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
+                                .addComponent(jLabel23)
+                                .addGap(125, 125, 125)
+                                .addComponent(userStatus, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jLabel26)
+                            .addComponent(userType, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                         .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 650, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(84, 84, 84))
         );
@@ -1108,21 +1123,25 @@ public class MainPOS extends javax.swing.JFrame {
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel21)
                             .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(36, 36, 36)
+                        .addGap(40, 40, 40)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel22)
                             .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(51, 51, 51)
+                        .addGap(50, 50, 50)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel26)
+                            .addComponent(userType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(40, 40, 40)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(userStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel23))
-                        .addGap(140, 140, 140)
+                        .addGap(61, 61, 61)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE, false)
                             .addComponent(addButtonUser, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(editButtonUser, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(deleteButtonUser, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(111, Short.MAX_VALUE))
+                .addContainerGap(132, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("User", jPanel4);
@@ -1198,7 +1217,7 @@ public class MainPOS extends javax.swing.JFrame {
                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 418, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton2)
-                .addContainerGap(54, Short.MAX_VALUE))
+                .addContainerGap(62, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Others", jPanel5);
@@ -1521,6 +1540,8 @@ public class MainPOS extends javax.swing.JFrame {
         String PCode = txtCode.getText();
         String Status = logStatus.getSelectedItem().toString();
         String Tax = txtTax.getText();
+        if (Tax.equals(""))
+                Tax = "0";
         try{
             con = DriverManager.getConnection(URL,USER,PASS);
             String sql = "INSERT INTO catalogtable(prodname, description, PCID, MRP, costprice, qty, prodstatus, prodcode, tax) VALUES (?,?,?,?,?,?,?,?,?)";
@@ -1566,6 +1587,8 @@ public class MainPOS extends javax.swing.JFrame {
         CategoryItem item = (CategoryItem)logCategory.getSelectedItem();        
         String MRP = txtMRP.getText();
         String Tax = txtTax.getText();
+        if (Tax.equals(""))
+                Tax = "0";
         String CPrice = txtCP.getText();
         String Qty = txtQty.getText();
         String PCode = txtCode.getText();
@@ -1578,7 +1601,7 @@ public class MainPOS extends javax.swing.JFrame {
             pstmt.setString(2, Description);
             pstmt.setInt(3, item.id);
             pstmt.setString(4, MRP);
-            pstmt.setString(5, Tax);
+            pstmt.setString(5, Tax);            
             pstmt.setString(6, CPrice);
             pstmt.setString(7, Qty);
             pstmt.setString(8, Status);
@@ -1954,9 +1977,15 @@ public class MainPOS extends javax.swing.JFrame {
         DefaultTableModel model = (DefaultTableModel)tableUsers.getModel();
         int SelectIndex = tableUsers.getSelectedRow();        
         int ID = Integer.parseInt(model.getValueAt(SelectIndex, 0).toString());
-        String Username = model.getValueAt(SelectIndex, 1).toString();        
-        if(Username.equals("admin")){
-            JOptionPane.showMessageDialog(this, "Cannot delete admin account!");
+        String Username = model.getValueAt(SelectIndex, 1).toString(); 
+        int AdminOccurrence = 0;
+        
+        for(int row = 0; row < model.getRowCount(); row++) {                    
+            if (tableUsers.getValueAt(row, 3).equals("admin") )
+                AdminOccurrence++;                    
+        }
+        if(AdminOccurrence == 1 && userType.getSelectedItem().toString().equals("admin")){
+            JOptionPane.showMessageDialog(this, "At least one 'admin' type account is required!");          
         }
         else{        
             int Choice = JOptionPane.showConfirmDialog(this, "Delete?","Warning", JOptionPane.YES_NO_OPTION);
@@ -2003,45 +2032,60 @@ public class MainPOS extends javax.swing.JFrame {
         int SelectIndex = tableUsers.getSelectedRow();        
         int ID = Integer.parseInt(model.getValueAt(SelectIndex, 0).toString());
         String Username = txtUsername.getText();
+        String Type = userType.getSelectedItem().toString();
         String Password;
-        if(Username.equals("admin")){
-           JOptionPane.showMessageDialog(this, "Cannot edit admin account!");
-        }
-        else{
-            Password = txtPassword.getText();           
-            String Status = userStatus.getSelectedItem().toString();
-            try{
-                con = DriverManager.getConnection(URL,USER,PASS);
-                String sql = "UPDATE users SET username=?,password=?, status=? WHERE ID=?";
-                pstmt = con.prepareStatement(sql);
-                pstmt.setString(1, Username);
-                pstmt.setString(2, Password);
-                pstmt.setString(3, Status);
-                pstmt.setInt(4, ID);
-                pstmt.executeUpdate();
-                JOptionPane.showMessageDialog(this, "User Updated");
-                UserUpdate();
-                txtUsername.setText("");
-                txtPassword.setText("");
-                userStatus.setSelectedIndex(-1);
-                txtUsername.requestFocus();                        
-            }catch(SQLException e){
-                JOptionPane.showMessageDialog(this, e, "SQL Error", JOptionPane.ERROR_MESSAGE);
-            }finally {
-                try {
-                    if (con != null) {
-                        con.close();
-                    }
-                    if (pstmt != null) {
-                        pstmt.close();
-                    }if (rs != null) {
-                    rs.close();
-                    }
-                } catch (SQLException e) {
-                    JOptionPane.showMessageDialog(this, e, "SQL Error", JOptionPane.ERROR_MESSAGE);
-                }
+        int AdminOccurrence = 0;
+        String checkName = "";
+        for(int row = 0; row < model.getRowCount(); row++) {                    
+            if (tableUsers.getValueAt(row, 3).equals("admin")){
+                AdminOccurrence++;
+                checkName = tableUsers.getValueAt(row, 1).toString();
             }    
-        }   
+        }
+        Password = txtPassword.getText();           
+        String Status = userStatus.getSelectedItem().toString();            
+        try{
+            con = DriverManager.getConnection(URL,USER,PASS);
+            String sql = "UPDATE users SET username=?, password=?, status=?, type=? WHERE ID=?";
+            pstmt = con.prepareStatement(sql);
+            pstmt.setString(1, Username);
+            if("".equals(Password))
+                JOptionPane.showMessageDialog(this, "Password Cannot be Empty");
+            else
+                pstmt.setString(2, Password);
+            pstmt.setString(3, Status);
+
+            if(AdminOccurrence == 1 && checkName.equals(Username)){
+                JOptionPane.showMessageDialog(this, "User Credentials Updated except its Type");
+            }    
+            else
+                pstmt.setString(4, Type);
+
+            pstmt.setInt(5, ID);
+            pstmt.executeUpdate();
+            JOptionPane.showMessageDialog(this, "User Credentials Updated");                
+            UserUpdate();
+            txtUsername.setText("");
+            txtPassword.setText("");
+            userType.setSelectedIndex(-1);
+            userStatus.setSelectedIndex(-1);
+            txtUsername.requestFocus();                        
+        }catch(SQLException e){
+            JOptionPane.showMessageDialog(this, "Please check the credentials you have entered");
+        }finally {
+            try {
+                if (con != null) {
+                    con.close();
+                }
+                if (pstmt != null) {
+                    pstmt.close();
+                }if (rs != null) {
+                rs.close();
+                }
+            } catch (SQLException e) {
+                JOptionPane.showMessageDialog(this, e, "SQL Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }           
     }//GEN-LAST:event_editButtonUserActionPerformed
     
     
@@ -2060,8 +2104,9 @@ public class MainPOS extends javax.swing.JFrame {
             while(rs.next()){
                 model.addRow(new Object[]{
                     rs.getString("ID"),
-                    rs.getString("username"),
-                    rs.getString("status")
+                    rs.getString("username"),                    
+                    rs.getString("status"),
+                    rs.getString("type")
                 } );
             }            
         }catch(SQLException e){
@@ -2085,14 +2130,16 @@ public class MainPOS extends javax.swing.JFrame {
     private void addButtonUserActionPerformed(){
         String Username = txtUsername.getText();
         String Password = txtPassword.getText();
-        String Status = userStatus.getSelectedItem().toString();        
+        String Status = userStatus.getSelectedItem().toString(); 
+        String Type = userType.getSelectedItem().toString();
         try{
             con = DriverManager.getConnection(URL,USER,PASS);
-            String sql = "INSERT INTO users(username, password, status) VALUES (?,?,?)";
+            String sql = "INSERT INTO users(username, password, type, status) VALUES (?,?,?,?)";
             pstmt = con.prepareStatement(sql);
             pstmt.setString(1, Username);
             pstmt.setString(2, Password);
-            pstmt.setString(3, Status);
+            pstmt.setString(3, Type);
+            pstmt.setString(4, Status);            
             pstmt.executeUpdate();
             JOptionPane.showMessageDialog(this, "User Added");            
             UserUpdate();
@@ -2129,6 +2176,7 @@ public class MainPOS extends javax.swing.JFrame {
         int SelectIndex = tableUsers.getSelectedRow();
         txtUsername.setText(model.getValueAt(SelectIndex, 1).toString());        
         userStatus.setSelectedItem(model.getValueAt(SelectIndex, 2).toString());
+        userType.getModel().setSelectedItem(model.getValueAt(SelectIndex, 3).toString());        
     }//GEN-LAST:event_tableUsersMouseClicked
 
     private void txtMRPSalesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMRPSalesActionPerformed
@@ -2306,7 +2354,7 @@ public class MainPOS extends javax.swing.JFrame {
             rsmd = rs.getMetaData();
             int columnCount = rsmd.getColumnCount();
             txtReport.setText("Sale ID\t\tDate\t\t\tTotal\t\tPaid\t\tBalance\t\tUser\n\n");
-            JOptionPane.showMessageDialog(this, txtReport.getText().length());
+            
             while(rs.next()) {                
                 for(int i=1; i<=columnCount; i++){
                     txtReport.setText(txtReport.getText() + rs.getString(i)+"\t\t");
@@ -2343,7 +2391,7 @@ public class MainPOS extends javax.swing.JFrame {
             rsmd = rs.getMetaData();
             int columnCount = rsmd.getColumnCount();
             txtReport.setText("#\t\tSale ID\t\tCode\t\tMRP\t\tTotal\t\tQty\t\tDiscount\n\n");
-            JOptionPane.showMessageDialog(this, txtReport.getText().length());
+            
             while(rs.next()) {                
                 for(int i=1; i<=columnCount; i++){
                     txtReport.setText(txtReport.getText() + rs.getString(i)+"\t\t");
@@ -2456,6 +2504,7 @@ public class MainPOS extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -2510,5 +2559,6 @@ public class MainPOS extends javax.swing.JFrame {
     private javax.swing.JTextField txtUsername;
     private javax.swing.JLabel user;
     private javax.swing.JComboBox<String> userStatus;
+    private javax.swing.JComboBox<String> userType;
     // End of variables declaration//GEN-END:variables
 }
