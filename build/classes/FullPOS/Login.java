@@ -1,6 +1,11 @@
 package FullPOS;
 
+import java.awt.Font;
+import java.awt.FontFormatException;
+import java.awt.GraphicsEnvironment;
 import java.awt.event.KeyEvent;
+import java.io.File;
+import java.io.IOException;
 import java.sql.*;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
@@ -39,9 +44,9 @@ public class Login extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        labelUsername = new javax.swing.JLabel();
         txtLUsername = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
+        labelPassword = new javax.swing.JLabel();
         txtLPassword = new javax.swing.JPasswordField();
         close = new javax.swing.JLabel();
 
@@ -49,6 +54,11 @@ public class Login extends javax.swing.JFrame {
         setUndecorated(true);
         setOpacity(0.96F);
         setResizable(false);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -79,8 +89,8 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
-        jLabel2.setText("Username :");
+        labelUsername.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
+        labelUsername.setText("Username :");
 
         txtLUsername.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
         txtLUsername.setForeground(new java.awt.Color(51, 51, 51));
@@ -90,8 +100,8 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
-        jLabel3.setText("Password :");
+        labelPassword.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
+        labelPassword.setText("Password :");
 
         txtLPassword.setFont(new java.awt.Font("Monospaced", 0, 10)); // NOI18N
         txtLPassword.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -124,15 +134,15 @@ public class Login extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3))
+                            .addComponent(labelUsername)
+                            .addComponent(labelPassword))
                         .addGap(32, 32, 32)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtLUsername, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
                             .addComponent(txtLPassword)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 231, Short.MAX_VALUE)
                         .addComponent(close)))
                 .addContainerGap(117, Short.MAX_VALUE))
         );
@@ -145,11 +155,11 @@ public class Login extends javax.swing.JFrame {
                     .addComponent(close, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(77, 77, 77)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
+                    .addComponent(labelUsername)
                     .addComponent(txtLUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(44, 44, 44)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
+                    .addComponent(labelPassword)
                     .addComponent(txtLPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(106, Short.MAX_VALUE))
         );
@@ -175,7 +185,7 @@ public class Login extends javax.swing.JFrame {
             Login();
         }        
     }//GEN-LAST:event_txtLPasswordKeyPressed
-
+    
     private void closeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_closeKeyPressed
         // TODO add your handling code here:
     }//GEN-LAST:event_closeKeyPressed
@@ -211,6 +221,11 @@ public class Login extends javax.swing.JFrame {
             Login();
         } 
     }//GEN-LAST:event_txtLUsernameKeyPressed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        // TODO add your handling code here:
+       
+    }//GEN-LAST:event_formWindowOpened
 
     private void TextFieldStyler(JTextField textField){
         textField.setHorizontalAlignment(JTextField.CENTER);
@@ -304,9 +319,9 @@ public class Login extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel close;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel labelPassword;
+    private javax.swing.JLabel labelUsername;
     private javax.swing.JPasswordField txtLPassword;
     private javax.swing.JTextField txtLUsername;
     // End of variables declaration//GEN-END:variables
