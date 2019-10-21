@@ -1029,46 +1029,35 @@ public class MainPOScounterLevel extends javax.swing.JFrame {
             String PName = txtProductSales.getText();  
             DefaultTableModel model = (DefaultTableModel)tableSales.getModel();
             int rowCount = model.getRowCount();
+            
             if(rowCount == 0){
-                    model.addRow(new Object[]{
-                    txtCodeSales.getText(),
-                    txtProductSales.getText(),
-                    txtMRPSales.getText(),
+                model.addRow(new Object[]{
+                txtCodeSales.getText(),
+                txtProductSales.getText(),
+                txtMRPSales.getText(),
 
-                    spinQty.getValue().toString(),
-                    txtLineTotal.getText(),
-                    txtDiscount.getText()
-                    } );
+                spinQty.getValue().toString(),
+                txtLineTotal.getText(),
+                txtDiscount.getText()
+                } );
             }else{
             for(int i=0; i<rowCount; i++){
-                    if(model.getValueAt(i, 1).toString().equalsIgnoreCase(PName)){
-
+                    if(model.getValueAt(i, 1).toString().equalsIgnoreCase(PName)){                        
                         model.removeRow(i);
-                        model.addRow(new Object[]{
-                        txtCodeSales.getText(),
-                        txtProductSales.getText(),
-                        txtMRPSales.getText(),
-
-                        spinQty.getValue().toString(),
-                        txtLineTotal.getText(),
-                        txtDiscount.getText()
-                        } );
-                    }else{
-                        model.addRow(new Object[]{
-                        txtCodeSales.getText(),
-                        txtProductSales.getText(),
-                        txtMRPSales.getText(),
-
-                        spinQty.getValue().toString(),
-                        txtLineTotal.getText(),
-                        txtDiscount.getText()
-                        } );
-                    }
+                        break;                        
+                    }                    
                 }
+                model.addRow(new Object[]{
+                txtCodeSales.getText(),
+                txtProductSales.getText(),
+                txtMRPSales.getText(),
+
+                spinQty.getValue().toString(),
+                txtLineTotal.getText(),
+                txtDiscount.getText()
+                } );
             }
-        }       
-             
-                
+        }     
         float sum = 0;
         for (int i=0; i<tableSales.getRowCount(); i++){
             sum = sum + Float.parseFloat(tableSales.getValueAt(i, 4).toString());
